@@ -1,24 +1,23 @@
 package main
 
 import (
-  "fmt"
-  "log"
+	"fmt"
+	"log"
 
-  "github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2"
 )
 
 func main() {
-  server := fiber.New()
+	server := fiber.New()
 
-  server.Get("/", Greet)
+	server.Get("/", Greet)
 
-  log.Fatal(server.Listen(":8080"))
+	log.Fatal(server.Listen(":8080"))
 }
 
 func Greet(ctx *fiber.Ctx) error {
-  name := ctx.Query("name", "World") // /?name={name} -> Hello, {name}!
-  greeting := fmt.Sprintf("Hello, %s!\n", name)
+	name := ctx.Query("name", "World") // /?name={name} -> Hello, {name}!
+	greeting := fmt.Sprintf("Hello, %s!\n", name)
 
-  return ctx.Status(200).SendString(greeting)
+	return ctx.Status(200).SendString(greeting)
 }
-
