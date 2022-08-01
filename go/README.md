@@ -25,4 +25,5 @@ on your terminal.
 
 - [Echo](https://github.com/labstack/echo)
 - [Fiber](https://github.com/gofiber/fiber)
+- [Gorilla](https://github.com/gorilla/mux)
 
